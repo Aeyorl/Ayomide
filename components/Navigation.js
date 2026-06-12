@@ -34,6 +34,15 @@ export default function Navigation() {
             </a>
           ))}
           <a
+            href="/Ayomide_Apeh_CV.pdf"
+            download="Ayomide_Apeh_CV.pdf"
+            className={styles.resumeButton}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
+          <a
             href="#contact"
             className={styles.ctaButton}
             onClick={(e) => { e.preventDefault(); handleClick("contact"); }}
@@ -64,6 +73,16 @@ export default function Navigation() {
             {labels[id]}
           </a>
         ))}
+        <a
+          href="/Ayomide_Apeh_CV.pdf"
+          download="Ayomide_Apeh_CV.pdf"
+          className={styles.resumeButton}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ margin: "10px 0" }}
+        >
+          Resume
+        </a>
         <a
           href="#contact"
           className="btn-primary"
