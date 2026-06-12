@@ -44,7 +44,7 @@ export default function Navigation() {
           </a>
           <a
             href="#contact"
-            className={styles.ctaButton}
+            className={`btn-primary ${styles.ctaButton}`}
             onClick={(e) => { e.preventDefault(); handleClick("contact"); }}
           >
             Get in Touch

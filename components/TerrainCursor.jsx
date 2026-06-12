@@ -114,7 +114,7 @@ export default function TerrainCursor() {
           top: 0; left: 0;
           width: 8px; height: 8px;
           border-radius: 50%;
-          background: #4ade80; /* bright green dot */
+          background: #f6ffb3ff; /* bright green dot */
           pointer-events: none;
           z-index: 99999;
           will-change: transform;
@@ -130,7 +130,7 @@ export default function TerrainCursor() {
           top: 0; left: 0;
           width: 40px; height: 40px;
           border-radius: 50%;
-          border: 1.5px solid rgba(74, 222, 128, 0.5); /* forest green ring */
+          border: 1.5px solid #f6ffb3ff;; /* forest green ring */
           pointer-events: none;
           z-index: 99998;
           will-change: transform;
@@ -151,22 +151,22 @@ export default function TerrainCursor() {
         /* Hover expansion */
         .tc-cursor-dot.hovering {
           width: 12px; height: 12px;
-          background: #86efac;
+          background: #f6ffb3ff;;
         }
         .tc-cursor-ring.hovering {
-          width: 56px; height: 56px;
-          border-color: rgba(74, 222, 128, 0.8);
-          background: rgba(74, 222, 128, 0.06);
+          width: 20px; height: 20px;
+          border-color: #f6ffb3ff;;
+          background: #f6ffb3ff;;  
         }
 
         /* Click compression */
         .tc-cursor-dot.clicking {
           width: 5px; height: 5px;
-          background: #166534;
+          background: #f6ffb3ff;;
         }
         .tc-cursor-ring.clicking {
           width: 32px; height: 32px;
-          border-color: rgba(22, 101, 52, 0.9);
+          border-color: #f6ffb3ff;;
         }
 
         /* Touch devices: hide entirely */
