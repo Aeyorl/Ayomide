@@ -1,0 +1,223 @@
+.previewContainer {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-96) var(--content-padding) var(--spacing-64);
+}
+
+.backBtn {
+  margin-bottom: var(--spacing-28);
+  display: inline-flex;
+  color: whitesmoke;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-lg);
+  font-weight: 400;
+  margin-bottom: var(--spacing-12);
+  color: rgb(235, 231, 232);
+
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-heading);
+  font-weight: 400;
+  margin-bottom: var(--spacing-8);
+  color: whitesmoke;
+}
+
+.subtitle {
+  font-size: var(--text-subheading);
+  color: whitesmoke;
+  margin-bottom: var(--spacing-48);
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+.tabHeader {
+  display: flex;
+  gap: var(--spacing-12);
+  border-bottom: 1px solid var(--color-ink-lighter);
+  padding-bottom: var(--spacing-16);
+  margin-bottom: var(--spacing-37);
+  overflow-x: auto;
+}
+
+.tabBtn {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: whitesmoke;
+  padding: var(--spacing-8) var(--spacing-20);
+  border-radius: 0;
+  transition: all 0.2s var(--ease-out);
+}
+
+.tabBtn:hover {
+  color: rgb(247, 248, 200);
+}
+
+.tabBtnActive {
+  background-color: var(--color-ink);
+  color: whitesmoke;
+}
+
+.tabBtnActive:hover {
+  color: rgb(251, 252, 203);
+}
+
+/* Tab 1: Simple Iframe */
+.iframeWrapper {
+  border-radius: 0;
+  border: 1px solid var(--color-ink-lighter);
+  overflow: hidden;
+  height: 600px;
+  background-color: var(--color-parchment-dark);
+  color: whitesmoke;
+}
+
+.iframeElement {
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: whitesmoke;
+}
+
+/* Tab 2: Dashboard Layout */
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--spacing-28);
+  height: 650px;
+}
+
+.sidebar {
+  background-color: var(--color-parchment);
+  border-radius: 0;
+  border: 1px solid var(--color-ink-lighter);
+  padding: var(--spacing-28);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+  overflow-y: auto;
+}
+
+.sidebarTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-heading-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+  border-bottom: 1px solid var(--color-ink-lighter);
+  padding-bottom: var(--spacing-12);
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-16);
+}
+
+.statCard {
+  background-color: var(--color-parchment-dark);
+  padding: var(--spacing-16);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(38, 45, 41, 0.05);
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-sm);
+  color: var(--color-ink);
+  line-height: 1.2;
+}
+
+.statLabel {
+  font-size: var(--text-caption);
+  color: var(--color-ink-light);
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.filterLabel {
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-ink-light);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  font-size: var(--text-small);
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+/* Tab 4: Editorial Case Study */
+.caseStudy {
+  background-color: var(--color-parchment);
+  border-radius: 0;
+  border: 1px solid var(--color-ink-lighter);
+  padding: var(--spacing-48);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.csSection {
+  margin-bottom: var(--spacing-37);
+}
+
+.csSection:last-child {
+  margin-bottom: 0;
+}
+
+.csTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-heading);
+  margin-bottom: var(--spacing-16);
+  color: var(--colornk);
+}
+
+.csBody {
+  font-size: var(--text-body);
+  color: var(--color-ink-light);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-16);
+}
+
+.codeBlock {
+  background-color: var(--color-ink);
+  color: #eeedda;
+  padding: var(--spacing-20);
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+  font-size: var(--text-small);
+  overflow-x: auto;
+  margin: var(--spacing-16) 0;
+}
+
+@media (max-width: 768px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .sidebar {
+    height: 300px;
+  }
+
+  .iframeWrapper {
+    height: 400px;
+  }
+
+  .caseStudy {
+    padding: var(--spacing-28);
+  }
+}

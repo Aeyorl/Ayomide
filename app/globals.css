@@ -1,0 +1,327 @@
+/* =============================================
+   DESIGN SYSTEM — Refero "Home" Style
+   Source: styles.refero.design
+   ============================================= */
+
+/* --- CSS Custom Properties --- */
+:root {
+  /* Colors */
+  --color-parchment: #f7f6e3;
+  --color-ink: #262d29;
+  --color-lemon: #ffff48;
+  --color-ink-light: rgba(38, 45, 41, 0.6);
+  --color-ink-lighter: rgba(38, 45, 41, 0.15);
+  --color-parchment-dark: #eeedda;
+
+  /* Typography */
+  --font-display: var(--font-playfair), 'Playfair Display', 'GT Sectra Display', serif;
+  --font-body: var(--font-inter), 'Inter', system-ui, sans-serif;
+
+  /* Font Sizes */
+  --text-display: clamp(3.5rem, 8vw, 8rem);
+  --text-heading-lg: clamp(2rem, 3.5vw, 2.625rem);
+  --text-heading: clamp(1.75rem, 3vw, 2.0625rem);
+  --text-heading-sm: clamp(1.125rem, 2vw, 1.3125rem);
+  --text-subheading: clamp(1rem, 1.5vw, 1.1875rem);
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-caption: 0.8125rem;
+
+  /* Spacing */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
+  --spacing-37: 37px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-75: 75px;
+  --spacing-96: 96px;
+  --spacing-112: 112px;
+  --section-gap: clamp(75px, 10vw, 112px);
+
+  /* Layout */
+  --page-max-width: 1280px;
+  --content-padding: clamp(20px, 5vw, 48px);
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 18px;
+  --radius-lg: 37px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-normal: 0.5s;
+  --duration-slow: 0.8s;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background-color: transparent;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --- Typography Utilities --- */
+.display-text {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.heading-lg {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-lg);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-ink);
+}
+
+.heading {
+  font-family: var(--font-body);
+  font-size: var(--text-heading);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-ink);
+}
+
+.heading-sm {
+  font-family: var(--font-body);
+  font-size: var(--text-heading-sm);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-ink);
+}
+
+.body-text {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+
+.caption-text {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-ink-light);
+}
+
+/* --- Section Label --- */
+.section-label {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-light);
+  margin-bottom: var(--spacing-24);
+}
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+}
+
+/* --- Section --- */
+.section {
+  padding: var(--section-gap) 0;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+  background-color: var(--color-lemon);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 500;
+  padding: var(--spacing-12) var(--spacing-24);
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-out), opacity 0.2s;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+  background-color: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: 400;
+  padding: var(--spacing-8) var(--spacing-20);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-ink-lighter);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-ink);
+  color: var(--color-parchment);
+  border-color: var(--color-ink);
+}
+
+/* --- Pill / Tag --- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: 400;
+  padding: var(--spacing-4) var(--spacing-16);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-ink-lighter);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+/* --- Card --- */
+.card {
+  background-color: var(--color-parchment);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-ink-lighter);
+  padding: var(--spacing-37);
+  transition: transform 0.3s var(--ease-out), border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-ink-light);
+}
+
+/* --- Scroll Animations --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger-children .animate-on-scroll:nth-child(1) { transition-delay: 0s; }
+.stagger-children .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+.stagger-children .animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+.stagger-children .animate-on-scroll:nth-child(5) { transition-delay: 0.4s; }
+.stagger-children .animate-on-scroll:nth-child(6) { transition-delay: 0.5s; }
+.stagger-children .animate-on-scroll:nth-child(7) { transition-delay: 0.6s; }
+.stagger-children .animate-on-scroll:nth-child(8) { transition-delay: 0.7s; }
+
+/* --- Hero Entrance Animation --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* --- Selection --- */
+::selection {
+  background-color: var(--color-lemon);
+  color: var(--color-ink);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-parchment);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-lighter);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-light);
+}
