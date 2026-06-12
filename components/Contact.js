@@ -44,7 +44,7 @@ export default function Contact() {
         </div>
 
         <div className="animate-on-scroll">
-          <a href="mailto:aeyod7@gmail.com" className={styles.contactCta}>
+          <a href="mailto:aeyod7@gmail.com" className={`btn-primary ${styles.contactCta}`}>
             Send a Message
           </a>
         </div>

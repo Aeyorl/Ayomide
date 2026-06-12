@@ -98,7 +98,6 @@
 }
 
 .contactCta {
-  composes: btn-primary from global;
   font-size: var(--text-body);
   padding: var(--spacing-16) var(--spacing-37);
 }
