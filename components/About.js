@@ -64,7 +64,7 @@ export default function About() {
 
         <div className={`${styles.aboutImageWrapper} animate-on-scroll`}>
           <Image
-            src="/profile-placeholder.png"
+            src="/profile.jpg"
             alt="Profile photo"
             width={420}
             height={560}
