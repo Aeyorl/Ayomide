@@ -2,6 +2,8 @@ import { Playfair_Display, Inter } from "next/font/google";
 import VideoBackground from "@/components/VideoBackground";
 import "./globals.css";
 
+import TerrainCursor from "@/components/TerrainCursor";
+
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
@@ -34,6 +36,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body>
         <VideoBackground />
+        <TerrainCursor />
         {children}
       </body>
     </html>
