@@ -27,9 +27,35 @@ export default function VideoBackground() {
   }, [seekToTarget]);
 
   useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Force load the video so metadata is fetched
+    video.load();
+
+    const forceLoadAndDecode = () => {
+      // Play and pause immediately to force iOS/Safari to decode the video frame and make duration available
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            video.pause();
+          })
+          .catch((err) => {
+            console.warn("Autoplay/decode interrupted: ", err);
+          });
+      }
+    };
+
+    // Attempt to decode on load
+    forceLoadAndDecode();
+
     const handleScroll = () => {
-      const video = videoRef.current;
-      if (!video || !video.duration) return;
+      if (!video.duration) {
+        // Try decoding again if duration is still missing on scroll
+        forceLoadAndDecode();
+        return;
+      }
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollFraction = Math.min(Math.max(scrollTop / docHeight, 0), 1);
@@ -37,8 +63,19 @@ export default function VideoBackground() {
       if (!isSeeking.current) seekToTarget();
     };
 
+    // Also trigger scroll handler on metadata load
+    video.addEventListener("loadedmetadata", handleScroll);
+    video.addEventListener("loadeddata", handleScroll);
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Run initially in case page loaded already scrolled
+    handleScroll();
+
+    return () => {
+      video.removeEventListener("loadedmetadata", handleScroll);
+      video.removeEventListener("loadeddata", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [seekToTarget]);
 
   return (
@@ -49,6 +86,8 @@ export default function VideoBackground() {
       playsInline
       preload="auto"
       onSeeked={handleSeeked}
+      autoPlay
+      loop
     >
       <source src="/hero-bg.mp4" type="video/mp4" />
     </video>
