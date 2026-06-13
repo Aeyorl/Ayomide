@@ -1,7 +1,8 @@
 "use client";
-import Image from "next/image";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import styles from "./About.module.css";
+
+import WaterdropPhoto from "@/components/WaterdropPhoto";
 
 export default function About() {
   const ref = useIntersectionObserver();
@@ -63,15 +64,13 @@ export default function About() {
         </div>
 
         <div className={`${styles.aboutImageWrapper} animate-on-scroll`}>
-          <Image
+          <WaterdropPhoto
             src="/profile.jpg"
-            alt="Profile photo"
-            width={420}
-            height={560}
-            className={styles.aboutImage}
-            priority={false}
+            alt="Ayomide Apeh"
+            initials="A.A"
+            coordinates="9.0765°N · 7.3986°E"
+            width={260}
           />
-          <div className={styles.imageAccent} />
         </div>
       </div>
     </section>
