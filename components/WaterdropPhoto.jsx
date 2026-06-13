@@ -135,10 +135,10 @@ export default function WaterdropPhoto({
 
         /* Frosted glass */
         .waterdrop-frost {
-          background: rgba(148, 148, 148, 0.22);
-          backdrop-filter: blur(px) saturate(1) brightness(1);
-          -webkit-backdrop-filter: blur(3px) saturate(1) brightness(1);
-          transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+          background: hsla(30, 1%, 49%, 0.35);
+          backdrop-filter: blur(2.5px ) saturate(1) brightness(1);
+          -webkit-backdrop-filter: blur(2.5px) saturate(1) brightness(1);
+          transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .waterdrop-outer:hover .waterdrop-frost {
           opacity: 0;
