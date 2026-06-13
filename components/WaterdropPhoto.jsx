@@ -12,7 +12,6 @@
  *   <WaterdropPhoto
  *     src="/profile.jpg"
  *     alt="Ayomide Apeh"
- *     initials="A.A"
  *     coordinates="9.0765°N · 7.3986°E"
  *   />
  *
@@ -36,7 +35,7 @@ export default function WaterdropPhoto({
   alt = "Profile photo",
   initials = "A.A",
   coordinates = "9.0765°N · 7.3986°E",
-  width = 260,
+  width = 4,
   className = "",
 }) {
   const height = Math.round(width * 1.25);
@@ -69,7 +68,7 @@ export default function WaterdropPhoto({
           <path
             d={DROP_RING_PATH}
             fill="none"
-            stroke="rgba(74,222,128,0.35)"
+            stroke="rgba(248, 232, 117, 0.35)"
             strokeWidth="1.5"
             strokeDasharray="6 4"
           />
@@ -106,24 +105,6 @@ export default function WaterdropPhoto({
           }}
         />
 
-        {/* Initials + hint — visible through frost, fades on hover */}
-        <div
-          className="waterdrop-initials"
-          style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 4,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "6px",
-            pointerEvents: "none",
-          }}
-        >
-          <span className="waterdrop-initials-text">{initials}</span>
-          <small className="waterdrop-hint">hover</small>
-        </div>
       </div>
 
       {/* Coordinate label */}
@@ -154,37 +135,15 @@ export default function WaterdropPhoto({
 
         /* Frosted glass */
         .waterdrop-frost {
-          background: rgba(4, 20, 10, 0.58);
-          backdrop-filter: blur(14px) saturate(0.25) brightness(0.85);
-          -webkit-backdrop-filter: blur(14px) saturate(0.25) brightness(0.85);
+          background: rgba(148, 148, 148, 0.22);
+          backdrop-filter: blur(px) saturate(1) brightness(1);
+          -webkit-backdrop-filter: blur(3px) saturate(1) brightness(1);
           transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .waterdrop-outer:hover .waterdrop-frost {
           opacity: 0;
         }
 
-        /* Initials */
-        .waterdrop-initials {
-          transition: opacity 0.5s ease;
-        }
-        .waterdrop-outer:hover .waterdrop-initials {
-          opacity: 0;
-        }
-        .waterdrop-initials-text {
-          font-size: clamp(32px, 5vw, 44px);
-          font-weight: 500;
-          color: rgba(74, 222, 128, 0.8);
-          letter-spacing: 8px;
-          font-family: 'JetBrains Mono', monospace;
-          line-height: 1;
-        }
-        .waterdrop-hint {
-          font-size: 10px;
-          color: rgba(74, 222, 128, 0.4);
-          letter-spacing: 3px;
-          font-family: 'JetBrains Mono', monospace;
-          text-transform: uppercase;
-        }
 
         /* Coordinate label */
         .waterdrop-coords {

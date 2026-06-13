@@ -69,7 +69,7 @@ export default function About() {
             alt="Ayomide Apeh"
             initials="A.A"
             coordinates="9.0765°N · 7.3986°E"
-            width={260}
+            width={250}
           />
         </div>
       </div>
